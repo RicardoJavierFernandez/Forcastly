@@ -33,6 +33,7 @@ class RegistrationForm extends Component {
         const isEnabled = this.state.name.length > 0 && this.state.email.length > 0 && this.state.password.length > 0;
         
         return (
+            <div className="colored-container">
             <Container>
                 <Jumbotron>
                     <Container>
@@ -85,7 +86,7 @@ class RegistrationForm extends Component {
                     <br />
                     <a href="login">Already Registered? Go to login</a>
                 </Col>
-            </Container>   
+            </Container>   </div>
         )
     }
 }
