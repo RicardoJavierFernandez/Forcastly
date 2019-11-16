@@ -47,6 +47,7 @@ class Inventory extends Component {
                     <th>Transaction</th>
                     <th>Product</th>
                     <th>Quantity</th>
+                    <th>Price</th>
                     <th>Date</th>
                     </tr>
                 </thead>
@@ -56,6 +57,7 @@ class Inventory extends Component {
                     <td>{order.transaction_type}</td>
                     <td>{order.product_name}</td>
                     <td>{parseInt(order.quantity)}</td>
+                    <td>{parseFloat(order.price).toFixed(2)}</td>
                     <td>{order.transaction_date}</td>
                     </tr>
                     )}
