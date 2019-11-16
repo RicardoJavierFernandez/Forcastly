@@ -57,6 +57,8 @@ class HomePage extends Component {
 }
 
     render() {
+
+        if (this.props.session) {
         return(
             <div>
             <NavBar />
@@ -104,22 +106,30 @@ class HomePage extends Component {
                 <Table striped bordered responsive="sm" size="sm">
                     <thead>
                     <tr>
-                        <th>Table heading</th>
-                        <th>Table heading</th>
+                        <th>Product Name</th>
+                        <th>Sales</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>Product 1</td>
+                        <td>$8,000</td>
                     </tr>
                     <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>Product 2</td>
+                        <td>$6,000</td>
                     </tr>
                     <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>Product 3</td>
+                        <td>$5,040</td>
+                    </tr>
+                    <tr>
+                        <td>Product 4</td>
+                        <td>$5,000</td>
+                    </tr>
+                    <tr>
+                        <td>Product 5</td>
+                        <td>$3,240</td>
                     </tr>
                     </tbody>
                 </Table>
@@ -149,12 +159,20 @@ class HomePage extends Component {
                         <td>Table cell</td>
                         <td>Table cell</td>
                     </tr>
+                    <tr>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                    </tr>
+                    <tr>
+                        <td>Table cell</td>
+                        <td>Table cell</td>
+                    </tr>
                     </tbody>
                 </Table>                
             </Container>
             </div>
-
         )
+        }
     }
 }
 

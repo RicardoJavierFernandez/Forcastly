@@ -21,9 +21,9 @@ class LoginForm extends Component {
     
     login = () => {
         API.login(this.state.email, this.state.password)
-            .then((session) => {
+            .then((session) => this.props.onLogin(session.data),response=>{
+                alert("Invalid credentials1!")
                 this.setState({invalid: true})
-                this.props.onLogin(session.data);
             });
     };
 

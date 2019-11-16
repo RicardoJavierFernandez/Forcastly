@@ -1,3 +1,31 @@
+body {
+    overscroll-behavior: none;
+}
+
 .dropdown-item.active, .dropdown-item:active {
+    background-color: #343a40;
+}
+
+.custom-link {
+    color: rgba(255,255,255,.5);
+}
+
+.custom-link:hover {
+    color: rgba(255,255,255,.75);
+    text-decoration: none;
+}
+
+.link-item {
+    color: #212529;
+    background-color: transparent;
+}
+
+.link-item:hover {
+    color: #212529;
+    background-color: transparent;
+}
+
+.link-item:active {
+    color: #ffffff;
     background-color: #343a40;
 }
