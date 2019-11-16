@@ -172,6 +172,8 @@ class HomePage extends Component {
             </Container>
             </div>
         )
+        } else {
+            return <div>Logged In</div>
         }
     }
 }
