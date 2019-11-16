@@ -13,10 +13,10 @@ class NavBar extends Component {
     render() {
         return (
             <Navbar bg="dark" variant="dark">
-            <Navbar.Brand><Link to="/home" className="custom-link">Forcastly</Link></Navbar.Brand>
+            <Link to="/home" className="custom-link navbar-brand">Forcastly</Link>
                 <Nav className="mr-auto">
-                <Nav.Link><Link to="/home" className="custom-link">Home</Link></Nav.Link>
-                <Nav.Link><Link to="/forecast" className="custom-link">Forecast</Link></Nav.Link>
+                <Link to="/home" className="custom-link nav-link">Home</Link>
+                <Link to="/forecast" className="custom-link nav-link">Forecast</Link>
                 <NavDropdown title="Orders" id="nav-dropdown">
                     <Link to="/createorder" className="custom-link link-item dropdown-item">Create Order</Link>
                     <Link to="/history" className="custom-link link-item dropdown-item">View Orders</Link>
