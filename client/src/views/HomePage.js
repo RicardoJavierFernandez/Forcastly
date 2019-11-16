@@ -57,8 +57,6 @@ class HomePage extends Component {
 }
 
     render() {
-
-        if (this.props.session) {
         return(
             <div>
             <NavBar />
@@ -172,7 +170,6 @@ class HomePage extends Component {
             </Container>
             </div>
         )
-        }
     }
 }
 
