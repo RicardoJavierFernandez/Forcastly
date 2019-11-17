@@ -26,6 +26,7 @@ class NavBar extends Component {
                     <Link to="/creategroup" className="custom-link link-item dropdown-item">Add Product Group</Link>
                     <Link to="/inventory" className="custom-link link-item dropdown-item">View Inventory</Link>
                 </NavDropdown>
+                <Link to="/upload" className="custom-link nav-link">Upload</Link>
                 </Nav>
             </Navbar>
         )
