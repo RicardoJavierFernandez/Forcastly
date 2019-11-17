@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { createBrowserHistory } from 'history';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Login from '../src/containers/LoginPage'
@@ -26,14 +25,13 @@ class App extends Component {
   signIn = (session) => this.setState({session});
 
   render () {
-    const history = createBrowserHistory();
-    // 10:45 minute mark
+
     return (
         <Router>
         <Switch>
-        {this.state.session && [<Route exact path ="/register" component = {()=> <Registration onRegister={this.signIn}/>} />,
-            <Route component = {()=> <Login onLogin={this.signIn} history={history}/>} />]}
-        {!this.state.session && [<Route exact path="/home" component = {() => <HomePage session={this.state.session} />}/>,
+        {!this.state.session && [<Route exact path ="/register" component = {()=> <Registration onRegister={this.signIn}/>} />,
+            <Route component = {()=> <Login onLogin={this.signIn}/>} />]}
+        {this.state.session && [<Route exact path="/home" component = {() => <HomePage session={this.state.session} />}/>,
             <Route exact path="/createorder" component = {() => <CreateOrder session={this.state.session} />}/>,
             <Route exact path="/createproduct" component={CreateProduct} session={this.state.session}/>,
             <Route exact path="/creategroup" component={CreateProductGroup} session={this.state.session}/>,
