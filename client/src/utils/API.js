@@ -22,6 +22,9 @@ const request = {
     createProduct: function(productData) {
         return axios.post('/api/products', productData);
     },
+    createManyProducts: function(productsArr) {
+        return axios.post('/api/products/many', productsArr);
+    },
     createOrder: function(orderData) {
         return axios.post('/api/transactions', orderData);
     },

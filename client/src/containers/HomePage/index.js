@@ -1,5 +1,5 @@
 
-import React, {Component} from 'react'; 
+import React, { Component } from 'react'; 
 import ForcastCard from '../../components/ForcastCard';
 import Api from '.../../utils/api';
 

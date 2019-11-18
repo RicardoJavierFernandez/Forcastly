@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import API from '../utils/API';
 import forecastModel from '../utils/forecastingModel';
 
-import {Table, Button, Container} from 'react-bootstrap';
+import { Table, Button, Container } from 'react-bootstrap';
 
 class Forecast extends Component {
     constructor(props) {

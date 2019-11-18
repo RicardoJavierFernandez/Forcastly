@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
-import {Link} from 'react-router-dom';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 import './styles.css';
 
@@ -26,6 +26,7 @@ class NavBar extends Component {
                     <Link to="/creategroup" className="custom-link link-item dropdown-item">Add Product Group</Link>
                     <Link to="/inventory" className="custom-link link-item dropdown-item">View Inventory</Link>
                 </NavDropdown>
+                <Link to="/upload" className="custom-link nav-link">Upload</Link>
                 </Nav>
             </Navbar>
         )

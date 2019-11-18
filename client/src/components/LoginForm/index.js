@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import LoginForm from 'components/LoginForm'
 import Api from '../..utils/api'
 

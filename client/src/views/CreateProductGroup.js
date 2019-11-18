@@ -3,7 +3,7 @@ import API from '../utils/API';
 
 import NavBar from '../components/NavBar';
 
-import {Form, Container, Col, Button, Table} from 'react-bootstrap';
+import { Form, Container, Col, Button, Table } from 'react-bootstrap';
 
 
 class CreateProductGroup extends Component {
@@ -63,8 +63,17 @@ class CreateProductGroup extends Component {
     }
 
     changeInputBox = (e) => {
-        // console.log(document.getElementById(e.target).firstElementChild);
-        console.log('Change input box.');
+        let inputBox = e.target.getElementsByTagName('input')[0];
+        console.log(e.target);
+        if(inputBox) {
+            if (inputBox.getAttribute('type', 'hidden')) {
+                inputBox.setAttribute('type', 'text');
+            }
+        
+            else {
+                inputBox.setAttribute('type', 'hidden');
+            }
+        }
     }
 
     componentDidMount() {
@@ -97,14 +106,13 @@ class CreateProductGroup extends Component {
                     <Table striped bordered hover>
                         <thead>
                             <tr>
-                            <th>Product Group</th>
-                            <th>Update Name</th>
+                            <th>Product Group (Click to Edit)</th>
                             </tr>
                         </thead>
                         <tbody>
                             {this.state.productGroups.map((group, index) =>
-                            <tr key={index}>
-                            <td onClick={this.changeInputBox}>
+                            <tr key={index} onClick={this.changeInputBox}>
+                            <td>
                                 {group.group_name}
                                 <input 
                                     type="hidden" 
@@ -112,7 +120,6 @@ class CreateProductGroup extends Component {
                                     id={'input' + group.product_group_id}>
                                 </input>
                             </td>
-                            <a id={group.product_group_id} href="" onClick={this.updateGroup}>Update</a>
                             </tr>
                             )}
                         </tbody>

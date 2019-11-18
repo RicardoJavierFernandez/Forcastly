@@ -19,4 +19,28 @@
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 25px;
     }
+
+.drop-area, .view-area {
+    height: 400px;
+    border: 2px solid #000000;
+    top: 50%;
+    left: 0%;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.view-area {
+    padding: 0;
+}
     
+.forecast-table-header {
+    text-align: center;
+}
+
+#products {
+    border-radius: .25rem;
+    border-width: 1px;
+    background: #ffffff;
+    height: 4vh;
+    color: #495057;
+}

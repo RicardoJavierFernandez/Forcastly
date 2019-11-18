@@ -1,6 +1,6 @@
-import React ,{Component} from 'react';
+import React ,{ Component } from 'react';
 import './styles.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 // festival example from video
 

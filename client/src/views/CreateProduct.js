@@ -3,7 +3,7 @@ import API from '../utils/API';
 
 import NavBar from '../components/NavBar';
 
-import {Container, Col, Form, Button} from 'react-bootstrap';
+import { Container, Col, Form, Button } from 'react-bootstrap';
 
 
 class CreateProduct extends Component {

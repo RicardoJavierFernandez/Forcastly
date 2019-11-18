@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 import API from '../utils/API';
 import forecastModel from '../utils/forecastingModel';
 import NavBar from '../components/NavBar';
+import './style.css';
 
-import {Table, Button, Container, Col} from 'react-bootstrap';
+import { Table, Button, Container, Col, Form } from 'react-bootstrap';
 
 
 class ForecastDetail extends Component {
@@ -87,10 +88,10 @@ class ForecastDetail extends Component {
             </Col>
             <br />
             <Container >
-                <Table striped bordered hover size="sm">
+                <Table striped bordered hover size="sm" className="forecast-table-header">
                     <thead>
                         <tr>
-                        <th>Product</th>
+                        <th>Product SKU</th>
                         <th>Units Order</th>
                         <th>Total Order</th>
                         <th>Master Carton</th>
@@ -110,6 +111,7 @@ class ForecastDetail extends Component {
                                 </select>
                             ) : (<strong>No options</strong>)}
                         </td>
+
                         <td>
                             <input type="text" name="unitsOrder"placeholder="Units Ordered" onChange={this.handleChange}></input>
                         </td>
