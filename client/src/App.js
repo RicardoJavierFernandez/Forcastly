@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -49,7 +49,6 @@ class App extends Component {
         {!this.state.session && <Route exact path="/forecast" component={ForecastDetail} session={this.state.session}/>}
         {!this.state.session && <Route exact path="/inventory" component={Inventory} session={this.state.session}/>}
         {!this.state.session && <Route exact path="/history" component={History} session={this.state.session}/>} */}
-
 
         <Route component={HomePage} />
 

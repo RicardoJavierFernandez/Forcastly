@@ -4,7 +4,7 @@ import forecastModel from '../utils/forecastingModel';
 import NavBar from '../components/NavBar';
 import './style.css';
 
-import {Table, Button, Container, Col, Form} from 'react-bootstrap';
+import { Table, Button, Container, Col, Form } from 'react-bootstrap';
 
 
 class ForecastDetail extends Component {

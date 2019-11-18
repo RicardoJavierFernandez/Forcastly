@@ -3,7 +3,7 @@ import API from '../utils/API';
 
 import NavBar from '../components/NavBar';
 
-import {Form, Container, Col, Button, Table} from 'react-bootstrap';
+import { Form, Container, Col, Button, Table } from 'react-bootstrap';
 
 
 class CreateProductGroup extends Component {
