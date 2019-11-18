@@ -5,6 +5,9 @@ router.route('/')
     .get(productsController.findAll)
     .post(productsController.create);
 
+router.route('/many')
+    .post(productsController.createMany);
+
 router.route('/:id')
     .get(productsController.findById)
     .put(productsController.update)

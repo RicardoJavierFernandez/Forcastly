@@ -32,6 +32,15 @@ module.exports = {
                 res.status(422).json(err);
             });
     },
+    createMany: function(req, res) {
+        db.Products.bulkCreate(req.body)
+            .then((dbProducts) => {
+                res.json(dbProducts);
+            })
+            .catch((err) => {
+                res.status(422).json(err);
+            });
+    },
     update: function(req, res) {
         db.Products.update(req.body, {
             where: {
