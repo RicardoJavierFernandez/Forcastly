@@ -8,6 +8,15 @@ import './style.css'
 
 import { Container, Col, Row, Form, Button, Table } from 'react-bootstrap';
 
+var dataToUpload = []
+var headers = []
+
+function sendData(objArr) {
+    // console.log(objArr);
+    API.createManyProducts(objArr)
+        .then((dbResponse) => console.log(dbResponse))
+        .catch((err) => console.log(err))
+}
 
 function MyDropzone(props) {
     const[ready, setReady] = useState(false);
@@ -31,8 +40,8 @@ function MyDropzone(props) {
             /* Update state */
             
             // Working on dynamically creating an array of objects to upload
-            let dataToUpload = []
-            let headers = [...data[0]]
+            
+            headers = [...data[0]]
             data.map((row, index) => {
                 switch(index) {
                     case 0:
@@ -49,12 +58,14 @@ function MyDropzone(props) {
                 }
             });
 
+            //populate table
             
-
+            //button click
             if (dataToUpload.length > 0) {
                 setReady(true);
                 setUploadData(...dataToUpload);
-                console.log('Check to see state changed to ready. There is data available for upload.', uploadData);
+                console.log('Check to see state changed to ready. There is data available for upload.');
+
             }
             // setReady({ready: true}, console.log(ready));
 
@@ -102,55 +113,44 @@ function MyDropzone(props) {
                         <p>Drag 'n' drop some files here, or click to select files</p>
                     </div>
                 </Col>
-                <Col md={{ span: 4, offset: 1 }} className="view-area">
-                    <Table size="sm">
-                        <thead>
+                <Col md={{ span: 6, offset: 1 }} className="view-area">
+                    <Table striped size="sm">
+                    <thead>
                             <tr>
-                            <th>#</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Username</th>
+                            {headers.map((header, index) => 
+                            <th key={index}>{header}</th>
+                            )}
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                            <td>1</td>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            </tr>
-                            <tr>
-                            <td>2</td>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            </tr>
-                            <tr>
-                            <td>3</td>
-                            <td>Larry</td>
-                            <td>The Bird</td>
-                            <td>@twitter</td>
-                            </tr>
-                            <tr>
-                            <td>4</td>
-                            <td>Larry</td>
-                            <td>The Bird</td>
-                            <td>@twitter</td>
-                            </tr>
-                            <tr>
-                            <td>5</td>
-                            <td>Larry</td>
-                            <td>The Bird</td>
-                            <td>@twitter</td>
-                            </tr>
+                            {dataToUpload.map((row, index) => 
+                            <tr key={index}>
+                                <td>
+                                    {row.product_sku}
+                                </td>
+                                <td>
+                                    {row.product_asin}
+                                </td>
+                                <td>
+                                    {row.product_name}
+                                </td>
+                                <td>
+                                    {row.master_carton}
+                                </td>
+                                <td>
+                                    {row.product_group_id}
+                                </td>
+                                </tr>)
+                            }
                         </tbody>
+                    
                     </Table>
                 </Col>
                 </Row>
                 <Row>
                     <Col md={{span: 2, offset: 6}}>
                         <br />
-                        <Button disabled={!isEnabled}>Upload Data</Button>
+                        <Button disabled={!isEnabled} onClick={() => sendData(dataToUpload)}>Upload Data</Button>
                     </Col>
                 </Row>
             </Container>
