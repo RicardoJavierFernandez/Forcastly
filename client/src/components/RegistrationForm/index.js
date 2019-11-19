@@ -100,7 +100,16 @@ class RegistrationForm extends Component {
                     <br />
                     <a href="login" className = "already">Already Registered? Go to login</a>
                 </Col>
-            </Container>   </div>
+            </Container>   
+            
+            <br/>
+
+
+            <br/>
+
+
+            <h2 className= "h2">  Inventory Management Software for your growing business tailored for inventory forecasting and demand planning. </h2>
+            </div>
         )
     }
 }

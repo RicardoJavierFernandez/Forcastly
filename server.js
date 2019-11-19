@@ -15,7 +15,7 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
     syncOptions.force = true;
 }
-
+ 
 app.use(routes);
 
 db.sequelize.sync(syncOptions).then(() => {
