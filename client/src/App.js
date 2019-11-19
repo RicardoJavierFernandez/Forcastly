@@ -29,7 +29,7 @@ class App extends Component {
     return (
         <Router>
         <Switch>
-        {!this.state.session && [<Route exact path ="/register" component = {()=> <Registration onRegister={this.signIn}/>} />,
+        {!this.state.session && [<Route path ="/register" component = {()=> <Registration onRegister={this.signIn}/>} />,
             <Route component = {()=> <Login onLogin={this.signIn}/>} />]}
         {this.state.session && [<Route exact path="/home" component = {() => <HomePage session={this.state.session} />}/>,
             <Route exact path="/createorder" component = {() => <CreateOrder session={this.state.session} />}/>,
