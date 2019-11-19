@@ -73,7 +73,7 @@ class HomePage extends Component {
                     
                 {/* Pie chart */}
                 <Col md={{span: 6, offset: 0}}>
-                    <div id="chart">
+                    <div id="chart" className= "pie"> 
                         <Chart 
                             options={this.state.options2} 
                             series={this.state.series2} 
@@ -108,7 +108,7 @@ class HomePage extends Component {
                         <th>Sales</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody className= "tbody">
                     <tr>
                         <td>Product 1</td>
                         <td>$8,000</td>
@@ -144,7 +144,7 @@ class HomePage extends Component {
                         <th>Quantity Sold</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody className= "tbody">
                     <tr>
                         <td>Product 1</td>
                         <td>223</td>
