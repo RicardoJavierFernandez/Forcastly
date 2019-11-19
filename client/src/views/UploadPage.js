@@ -144,7 +144,7 @@ function MyDropzone(props) {
                 <Row>
                     <Col md={{span: 2, offset: 6}}>
                         <br />
-                        <Button disabled={!isEnabled} onClick={() => {sendData(dataToUpload); setReady(false); setUploadData([])}}>Upload Data</Button>
+                        <Button  className= "button" disabled={!isEnabled} onClick={() => {sendData(dataToUpload); setReady(false); setUploadData([])}}>Upload Data</Button>
                         {/* <Button disabled={!isEnabled} onClick={() => {
                             Promise.all([sendData(dataToUpload)])
                                 .then(() => {
