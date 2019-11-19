@@ -12,15 +12,21 @@ var dataToUpload = []
 var headers = []
 
 function sendData(objArr) {
-    // console.log(objArr);
     API.createManyProducts(objArr)
-        .then((dbResponse) => console.log(dbResponse))
+        .then((dbResponse) => dataToUpload = [])
         .catch((err) => console.log(err))
+}
+
+function clearData() {
+    dataToUpload = [];
 }
 
 function MyDropzone(props) {
     const[ready, setReady] = useState(false);
     const[uploadData, setUploadData] = useState([]);
+
+    console.log(uploadData);
+
 
     const onDrop = useCallback((acceptedFiles) => {
       acceptedFiles.forEach((file) => {
@@ -58,20 +64,10 @@ function MyDropzone(props) {
                 }
             });
 
-            //populate table
-            
-            //button click
             if (dataToUpload.length > 0) {
                 setReady(true);
-                setUploadData(...dataToUpload);
-                console.log('Check to see state changed to ready. There is data available for upload.');
-
+                setUploadData(...dataToUpload, () => console.log('Testing', uploadData));
             }
-            // setReady({ready: true}, console.log(ready));
-
-            // API.createManyProducts(dataToUpload)
-            //     .then((dbResponse) => console.log(dbResponse))
-            //     .catch((err) => console.log(err))
             };
             reader.readAsBinaryString(file);
       });
@@ -151,6 +147,8 @@ function MyDropzone(props) {
                     <Col md={{span: 2, offset: 6}}>
                         <br />
                         <Button disabled={!isEnabled} onClick={() => sendData(dataToUpload)}>Upload Data</Button>
+                        <p></p>
+                        <Button disabled={!isEnabled} onClick={() => {clearData(dataToUpload); setReady(false)}}>Clear Data</Button>
                     </Col>
                 </Row>
             </Container>
