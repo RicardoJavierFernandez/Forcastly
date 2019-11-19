@@ -44,9 +44,10 @@ const request = {
             password: password
         });
     },
-    registerUser: function(name, email, password) {
+    registerUser: function(firstName, lastName, email, password) {
         return axios.post('/api/users', {
-            name: name,
+            first_name: firstName,
+            last_name: lastName,
             email: email,
             password: password
         });
