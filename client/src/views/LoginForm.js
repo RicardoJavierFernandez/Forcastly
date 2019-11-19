@@ -32,13 +32,14 @@ class LoginForm extends Component {
         const isEnabled = this.state.email.length > 0 && this.state.password.length > 0;
 
         return (
-            <Container>
-                <Jumbotron>
-                    <Container>
-                    <Col md={{ span: 4, offset: 4 }}>
-                        <h2>Login</h2>
-                        <p>Welcome, please login</p>
-                    </Col>
+            <div className="colored-container">
+            <Container >
+                <Jumbotron className = "jumbo5">
+                    <Container classname = "jumbo5">
+                   
+                        <h2>Welcome to Forcastly  </h2>
+                        <p>Please sign in below or create an account</p>
+                    
                     </Container>
                 </Jumbotron>
                 <Col md={{ span: 4, offset: 4 }}>
@@ -64,11 +65,11 @@ class LoginForm extends Component {
                 </Col>
                 <br />
                 <Col md={{ span: 4, offset: 4 }}>
-                <Button disabled={!isEnabled} onClick={this.login} variant="primary">Login</Button>
+                <Button  className= "button" disabled={!isEnabled} onClick={this.login} variant="primary">Login</Button>
                 <br />
-                <a href="register">Not Registered?</a>
+                <a href="register" className= "already">Not Registered?</a>
                 </Col>
-            </Container>
+            </Container> </div>
         )
     }
 }
