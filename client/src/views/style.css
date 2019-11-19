@@ -1,4 +1,9 @@
-
+.colored-container
+{
+    background-color: burlywood;
+    min-height: 1200px;
+    display: block;
+}
 
 .jumbo3
 {
@@ -11,14 +16,34 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
     
 }
-.jumbo4
+.jumbo5
 {
         
     background-color: skyblue;
     text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 25px;
+    padding: 20px;
     }
+
+    .button
+{
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+    text-align: center;
+ 
+    }
+.already
+{
+    font-size: 18px;
+}
+.h3
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
 
 .drop-area, .view-area {
     height: 400px;
@@ -45,3 +70,25 @@
     height: 4vh;
     color: #495057;
 }
+
+body
+{
+    background-color: antiquewhite;
+}
+.tbody
+{
+background-color: white
+}
+.pie
+{
+    
+}
+.h2
+{
+    text-align: center;
+    font-size: 30px;
+    font-display: initial;
+    color: maroon;
+    
+}
+    

@@ -94,7 +94,7 @@ function MyDropzone(props) {
             <Container>
                 <Row>
                 <Col md={{ span: 4, offset: 1 }}>
-                    <h2>Upload Excel File</h2>
+                    <h2 className= "h4">Upload Excel File</h2>
                     <Form.Label>Upload Type</Form.Label>
                     <Form.Control as="select" id="productGroupSelection">
                             {uploadTypes.map((type, index) => 
@@ -106,7 +106,7 @@ function MyDropzone(props) {
                     <br />
                 </Col>
                 <Col md={{ span: 5, offset: 2 }}>
-                    <h2>View Data Before Upload</h2>
+                    <h2 className= "h4" >Review Files Before Upload</h2>
                     <br />
                 </Col>
                 </Row>
@@ -114,7 +114,7 @@ function MyDropzone(props) {
                 <Col md={{ span: 4, offset: 1 }} className="drop-area">
                     <div {...getRootProps()}>
                         <input {...getInputProps()} />
-                        <p>Drag 'n' drop some files here, or click to select files</p>
+                        <p>Drag 'n' drop files here, or click to select files</p>
                     </div>
                 </Col>
                 <Col md={{ span: 6, offset: 1 }} className="view-area">
@@ -153,7 +153,7 @@ function MyDropzone(props) {
                                 })
                             }}>Upload Data</Button> */}
                         <p></p>
-                        <Button disabled={!isEnabled} onClick={() => {clearData(dataToUpload); setReady(false); setUploadData([])}}>Clear Data</Button>
+                        <Button  className= "button" disabled={!isEnabled} onClick={() => {clearData(dataToUpload); setReady(false); setUploadData([])}}>Clear Data</Button>
                     </Col>
                 </Row>
             </Container>

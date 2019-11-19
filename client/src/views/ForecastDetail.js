@@ -84,7 +84,7 @@ class ForecastDetail extends Component {
             <NavBar />
             <br />
             <Col md={{ span: 4, offset: 4 }}>
-                <h2>Forecast Calculator</h2>
+                <h2 className= "h2">Forecast Calculator</h2>
             </Col>
             <br />
             <Container >
@@ -136,7 +136,7 @@ class ForecastDetail extends Component {
                         </tr>
                     </tbody>
                 </Table>
-                <Button disabled={!isEnabled} variant="primary" onClick={this.submitAssumptions}>Calculate</Button>
+                <Button className= "button" disabled={!isEnabled} variant="primary" onClick={this.submitAssumptions}>Calculate</Button>
             </Container>
             </div>
         )
