@@ -13,7 +13,10 @@ var headers = []
 
 function sendData(objArr) {
     API.createManyProducts(objArr)
-        .then((dbResponse) => dataToUpload = [])
+        .then((dbResponse) => {
+            dataToUpload = [];
+            headers = [];
+        })
         .catch((err) => console.log(err))
 }
 
@@ -25,8 +28,6 @@ function clearData() {
 function MyDropzone(props) {
     const[ready, setReady] = useState(false);
     const[uploadData, setUploadData] = useState([]);
-
-    console.log(uploadData);
 
     const onDrop = useCallback((acceptedFiles) => {
       acceptedFiles.forEach((file) => {
@@ -97,7 +98,7 @@ function MyDropzone(props) {
                     </Form.Control>
                     <br />
                 </Col>
-                <Col md={{ span: 5, offset: 1 }}>
+                <Col md={{ span: 5, offset: 2 }}>
                     <h2>View Data Before Upload</h2>
                     <br />
                 </Col>
@@ -136,7 +137,7 @@ function MyDropzone(props) {
                 <Row>
                     <Col md={{span: 2, offset: 6}}>
                         <br />
-                        <Button disabled={!isEnabled} onClick={() => sendData(dataToUpload)}>Upload Data</Button>
+                        <Button disabled={!isEnabled} onClick={() => {sendData(dataToUpload); setReady(false); setUploadData([])}}>Upload Data</Button>
                         <p></p>
                         <Button disabled={!isEnabled} onClick={() => {clearData(dataToUpload); setReady(false); setUploadData([])}}>Clear Data</Button>
                     </Col>

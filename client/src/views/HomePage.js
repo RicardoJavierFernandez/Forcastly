@@ -134,36 +134,36 @@ class HomePage extends Component {
 
                 <br />
 
-                <Col md={{ span: 3, offset: 4 }}>
+                <Col md={{ span: 4, offset: 4 }}>
                     <h3>Top 5 Best Selling</h3>
                 </Col>
-                <Table striped bordered responsive="md" size="sm">
+                <Table striped bordered responsive="sm" size="sm">
                     <thead>
                     <tr>
-                        <th>Table heading</th>
-                        <th>Table heading</th>
+                        <th>Product Name</th>
+                        <th>Quantity Sold</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>Product 1</td>
+                        <td>223</td>
                     </tr>
                     <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>Product 2</td>
+                        <td>200</td>
                     </tr>
                     <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>Product 3</td>
+                        <td>154</td>
                     </tr>
                     <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>Product 4</td>
+                        <td>143</td>
                     </tr>
                     <tr>
-                        <td>Table cell</td>
-                        <td>Table cell</td>
+                        <td>Product 5</td>
+                        <td>127</td>
                     </tr>
                     </tbody>
                 </Table>                
