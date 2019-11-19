@@ -15,7 +15,8 @@ class CreateProductGroup extends Component {
                 group_id: '',
                 group_name: '',
             },
-            productGroups: []
+            productGroups: [],
+            inputGroupName: ''
         }
     }
 
@@ -44,7 +45,7 @@ class CreateProductGroup extends Component {
                     dbData.push(group);
                 });
 
-                this.setState({productGroups: dbData}, () => console.log(this.productGroups));
+                this.setState({productGroups: dbData});
             })
     }
 
@@ -53,7 +54,7 @@ class CreateProductGroup extends Component {
 
         let newInfo = {
             group_id: e.target.id,
-            group_name: e.target.name
+            group_name: e.target.value
         }
         
         this.setState({groupInfo: newInfo}, () => {
@@ -64,7 +65,6 @@ class CreateProductGroup extends Component {
 
     changeInputBox = (e) => {
         let inputBox = e.target.getElementsByTagName('input')[0];
-        console.log(e.target);
         if(inputBox) {
             if (inputBox.getAttribute('type', 'hidden')) {
                 inputBox.setAttribute('type', 'text');
@@ -94,7 +94,14 @@ class CreateProductGroup extends Component {
                         <h2>Create Product Group</h2>
                         <Form.Group controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Product Group Name</Form.Label>
-                                <Form.Control type="text" rows="1" name="groupName" id= "groupName" placeholder="Required Field" onChange={this.handleInputChange} />
+                                <Form.Control 
+                                    type="text" 
+                                    rows="1" 
+                                    name="groupName" 
+                                    id= "groupName" 
+                                    placeholder="Required Field" 
+                                    onChange={this.handleInputChange} 
+                                />
                         </Form.Group>
                         <Button disabled={!isEnabled} variant="primary" onClick={this.createGroup}>Add Group</Button>
                     </Col>
@@ -116,8 +123,13 @@ class CreateProductGroup extends Component {
                                 {group.group_name}
                                 <input 
                                     type="hidden" 
+                                    name="inputGroupName"
+                                    value={this.state.inputGroupName}
                                     placeholder="Enter New Name"
-                                    id={'input' + group.product_group_id}>
+                                    id={'input' + group.product_group_id}
+                                    onChange={this.handleInputChange}
+                                    onBlur={this.updateGroup}
+                                >
                                 </input>
                             </td>
                             </tr>

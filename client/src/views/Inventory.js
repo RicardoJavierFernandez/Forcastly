@@ -23,7 +23,7 @@ class Inventory extends Component {
                 dbOrders.data[0].map((row) => {
                     dbData.push(row);
                 });
-                this.setState({orders: dbData}, () => console.log(this.state.orders));
+                this.setState({orders: dbData});
             });
     }
 

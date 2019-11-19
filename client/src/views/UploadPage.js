@@ -18,6 +18,7 @@ function sendData(objArr) {
 }
 
 function clearData() {
+    headers = [];
     dataToUpload = [];
 }
 
@@ -26,7 +27,6 @@ function MyDropzone(props) {
     const[uploadData, setUploadData] = useState([]);
 
     console.log(uploadData);
-
 
     const onDrop = useCallback((acceptedFiles) => {
       acceptedFiles.forEach((file) => {
@@ -66,7 +66,7 @@ function MyDropzone(props) {
 
             if (dataToUpload.length > 0) {
                 setReady(true);
-                setUploadData(...dataToUpload, () => console.log('Testing', uploadData));
+                setUploadData(...dataToUpload);
             }
             };
             reader.readAsBinaryString(file);
@@ -121,22 +121,12 @@ function MyDropzone(props) {
                         <tbody>
                             {dataToUpload.map((row, index) => 
                             <tr key={index}>
-                                <td>
-                                    {row.product_sku}
-                                </td>
-                                <td>
-                                    {row.product_asin}
-                                </td>
-                                <td>
-                                    {row.product_name}
-                                </td>
-                                <td>
-                                    {row.master_carton}
-                                </td>
-                                <td>
-                                    {row.product_group_id}
-                                </td>
-                                </tr>)
+                                <td>{row.product_sku}</td>
+                                <td>{row.product_asin}</td>
+                                <td>{row.product_name}</td>
+                                <td>{row.master_carton}</td>
+                                <td>{row.product_group_id}</td>
+                            </tr>)
                             }
                         </tbody>
                     
@@ -148,7 +138,7 @@ function MyDropzone(props) {
                         <br />
                         <Button disabled={!isEnabled} onClick={() => sendData(dataToUpload)}>Upload Data</Button>
                         <p></p>
-                        <Button disabled={!isEnabled} onClick={() => {clearData(dataToUpload); setReady(false)}}>Clear Data</Button>
+                        <Button disabled={!isEnabled} onClick={() => {clearData(dataToUpload); setReady(false); setUploadData([])}}>Clear Data</Button>
                     </Col>
                 </Row>
             </Container>
