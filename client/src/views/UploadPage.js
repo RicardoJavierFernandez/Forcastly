@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import Dropzone, { useDropzone } from 'react-dropzone';
 import XLSX from 'xlsx';
 
@@ -14,10 +14,13 @@ var headers = []
 function sendData(objArr) {
     API.createManyProducts(objArr)
         .then((dbResponse) => {
+            console.log('Then part of create many');
             dataToUpload = [];
             headers = [];
         })
         .catch((err) => console.log(err))
+
+    return;
 }
 
 function clearData() {
@@ -28,6 +31,10 @@ function clearData() {
 function MyDropzone(props) {
     const[ready, setReady] = useState(false);
     const[uploadData, setUploadData] = useState([]);
+
+    // useEffect(() => {
+    //     setUploadData(...dataToUpload, console.log('Mounting component', uploadData));
+    // });
 
     const onDrop = useCallback((acceptedFiles) => {
       acceptedFiles.forEach((file) => {
@@ -138,6 +145,13 @@ function MyDropzone(props) {
                     <Col md={{span: 2, offset: 6}}>
                         <br />
                         <Button disabled={!isEnabled} onClick={() => {sendData(dataToUpload); setReady(false); setUploadData([])}}>Upload Data</Button>
+                        {/* <Button disabled={!isEnabled} onClick={() => {
+                            Promise.all([sendData(dataToUpload)])
+                                .then(() => {
+                                    setReady(false);
+                                    setUploadData([])
+                                })
+                            }}>Upload Data</Button> */}
                         <p></p>
                         <Button disabled={!isEnabled} onClick={() => {clearData(dataToUpload); setReady(false); setUploadData([])}}>Clear Data</Button>
                     </Col>
