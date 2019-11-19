@@ -38,7 +38,7 @@ class Inventory extends Component {
             <Container>
             <Col md={{ span: 4, offset: 4 }}>
                     <br />
-                    <h2>Inventory</h2>
+                    <h2 className= "h2">Inventory</h2>
                     <br />
                 </Col>
                 <Table striped bordered hover>

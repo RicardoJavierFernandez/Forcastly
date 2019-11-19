@@ -91,7 +91,7 @@ class CreateProductGroup extends Component {
                 <Container>
                     <br />
                     <Col md={{ span: 4, offset: 4 }}>
-                        <h2>Create Product Group</h2>
+                        <h2 className= "h2">Create Product Group</h2>
                         <Form.Group controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>Product Group Name</Form.Label>
                                 <Form.Control 
@@ -103,7 +103,7 @@ class CreateProductGroup extends Component {
                                     onChange={this.handleInputChange} 
                                 />
                         </Form.Group>
-                        <Button disabled={!isEnabled} variant="primary" onClick={this.createGroup}>Add Group</Button>
+                        <Button  className= "button" disabled={!isEnabled} variant="primary" onClick={this.createGroup}>Add Group</Button>
                     </Col>
 
                     <br />

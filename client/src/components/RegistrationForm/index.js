@@ -38,7 +38,7 @@ class RegistrationForm extends Component {
             <Container>
                 <Jumbotron className= "jumbo2">
                     <Container className= "jumbo2">
-                        <h2>Welcome to Forcastly</h2>
+                        <h3>Welcome to Forcastly</h3>
                         <p> Fill out the form for registration </p>
                     </Container>
                 </Jumbotron>
@@ -108,7 +108,7 @@ class RegistrationForm extends Component {
             <br/>
 
 
-            <h2 className= "h2">  Inventory Management Software for your growing business tailored for inventory forecasting and demand planning. </h2>
+            <h3 className= "h3">  Inventory Management Software for your growing business tailored for inventory forecasting and demand planning. </h3>
             </div>
         )
     }

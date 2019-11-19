@@ -79,7 +79,7 @@ class CreateOrder extends Component {
                 <br />
                 <Container>
                     <Col md={{ span: 4, offset: 4 }}>
-                        <h2>Place Order</h2>
+                        <h2 className= "h2"> Place Order</h2>
                     </Col>
                     <Col md={{ span: 4, offset: 4 }}>
                     <Form>
@@ -118,7 +118,7 @@ class CreateOrder extends Component {
                             <Form.Control type="text" rows="1" name="quantity" id="quantity" placeholder="Required Field" onChange={this.handleInputChange} />
                         </Form.Group>
                     </Form>
-                    <Button disabled={!isEnabled} variant="primary" onClick={this.submitOrder}>Order Now</Button>
+                    <Button  className= "button" disabled={!isEnabled} variant="primary" onClick={this.submitOrder}>Order Now</Button>
                     </Col>
                 </Container>
             </div>

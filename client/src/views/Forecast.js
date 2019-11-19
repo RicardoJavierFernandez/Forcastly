@@ -136,7 +136,7 @@ submitAssumptions = (e) => {
                         </tr> 
                     </tbody>
                 </Table>
-                <Button variant="success" onClick={this.submitAssumptions}>Calculate</Button>
+                <Button  className= "button" variant="success" onClick={this.submitAssumptions}>Calculate</Button>
             </Container>
 
         )
