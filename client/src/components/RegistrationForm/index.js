@@ -11,7 +11,8 @@ class RegistrationForm extends Component {
         super(props);
 
         this.state = {
-            name:"",
+            firstName:"",
+            lastName:"",
             email:"",
             password: ""
         }
@@ -22,7 +23,7 @@ class RegistrationForm extends Component {
     }
     
     register = () => {
-        API.registerUser(this.state.name, this.state.email.toLowerCase(), this.state.password)
+        API.registerUser(this.state.firstName.toLowerCase(), this.state.lastName.toLowerCase(), this.state.email.toLowerCase(), this.state.password)
             .then((session) => {
                 this.props.onRegister(session.data);
             });
@@ -30,25 +31,38 @@ class RegistrationForm extends Component {
 
     render () {
         // isEnable boolean for the button
-        const isEnabled = this.state.name.length > 0 && this.state.email.length > 0 && this.state.password.length > 0;
+        const isEnabled = this.state.firstName.length >  0 && this.state.lastName.length >  0 && this.state.email.length > 0 && this.state.password.length > 0;
         
         return (
             <div className="colored-container">
             <Container>
-                <Jumbotron>
-                    <Container>
-                        <h2>Registration Form</h2>
-                        <p>Enter your information below</p>
+                <Jumbotron className= "jumbo2">
+                    <Container className= "jumbo2">
+                        <h2>Welcome to Forcastly</h2>
+                        <p> Fill out the form for registration </p>
                     </Container>
                 </Jumbotron>
                 <Col md={{ span: 4, offset: 4 }}>
                     <Form.Control 
                         type="text" 
+                        rows="" 
+                        value={this.state.firstName} 
+                        name="firstName" 
+                        id= "firstName" 
+                        placeholder="Enter your First Name" 
+                        onChange={this.inputChangeHandler} 
+                    />
+                </Col>
+                
+                <br />
+                <Col md={{ span: 4, offset: 4 }}>
+                    <Form.Control 
+                        type="text" 
                         rows="1" 
-                        value={this.state.name} 
-                        name="name" 
-                        id= "name" 
-                        placeholder="Enter your Name" 
+                        value={this.state.lastName} 
+                        name="lastName" 
+                        id= "lastName" 
+                        placeholder="Enter your Last Name" 
                         onChange={this.inputChangeHandler} 
                     />
                 </Col>
@@ -82,9 +96,9 @@ class RegistrationForm extends Component {
                 </Col>
                 <br />
                 <Col md={{ span: 4, offset: 4 }}>
-                    <Button disabled={!isEnabled} onClick={this.register}>Register</Button>
+                    <Button className = "button"disabled={!isEnabled} onClick={this.register}>Register</Button>
                     <br />
-                    <a href="login">Already Registered? Go to login</a>
+                    <a href="login" className = "already">Already Registered? Go to login</a>
                 </Col>
             </Container>   </div>
         )
