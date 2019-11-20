@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import API from '../utils/API';
-
+import {Link} from 'react-router-dom';
 import { Form, Button, Container, Col, Jumbotron } from 'react-bootstrap/';
 
 
@@ -81,7 +81,7 @@ class RegistrationForm extends Component {
                 <Col md={{ span: 4, offset: 4 }}>
                     <Button disabled={!isEnabled} onClick={this.register}>Register</Button>
                     <br />
-                    <a href="login">Already Registered? Go to login</a>
+                    <Link to="/login">Already Registered? Go to login</Link>
                 </Col>
             </Container>      
         )
