@@ -10,9 +10,8 @@ let db = {};
 
 
 // Output will read the information from the .env file if it exists and initialize new Sequelize instance
-// if (config.use_env_variable) {
-//     var sequelize = new Sequelize(process.env[config.use_env_variable]);
-// }
+// the if statement applies when we are deploying to Heroku using JAWSDB MySQL
+// the else statement applies when we run the application on our local machine, usually with the command npm start
 if (process.env.JAWSDB_URL) {
     var sequelize = new Sequelize(process.env.JAWSDB_URL, {
         pool: {
@@ -43,12 +42,12 @@ if (process.env.JAWSDB_URL) {
         }
 })
 }
-// Or it will initialize a Sequelize instance with the database information in the config/config.json file.
+// Or it will initialize a Sequelize instance with the database information in the .env file.
 else {
     var sequelize = new Sequelize(
-        config.database,
-        config.username,
-        config.password,
+        process.env.DATABASE,
+        process.env.USERNAME,
+        process.env.PASSWORD,
         config, {
             dialectOptions: {
                 useUTC: false, //for reading from database
