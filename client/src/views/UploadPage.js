@@ -14,7 +14,6 @@ var headers = []
 function sendData(objArr) {
     API.createManyProducts(objArr)
         .then((dbResponse) => {
-            console.log('Then part of create many');
             dataToUpload = [];
             headers = [];
         })
@@ -30,6 +29,7 @@ function clearData() {
 
 function MyDropzone(props) {
     const[ready, setReady] = useState(false);
+    const[submitted, setSubmitted] = useState(false);
     const[uploadData, setUploadData] = useState([]);
 
     // useEffect(() => {
@@ -61,8 +61,7 @@ function MyDropzone(props) {
                     case 0:
                         break;
                     default:
-                        dataToUpload.push(
-                        {
+                        dataToUpload.push({
                             [headers[0]]: row[0],
                             [headers[1]]: row[1],
                             [headers[2]]: row[2],
@@ -74,6 +73,7 @@ function MyDropzone(props) {
 
             if (dataToUpload.length > 0) {
                 setReady(true);
+                setSubmitted(false);
                 setUploadData(...dataToUpload);
             }
             };
@@ -107,6 +107,7 @@ function MyDropzone(props) {
                 </Col>
                 <Col md={{ span: 5, offset: 2 }}>
                     <h2 className= "h4" >Review Files Before Upload</h2>
+                    {submitted && <p>The data was uploaded to the database</p>}
                     <br />
                 </Col>
                 </Row>
@@ -144,15 +145,13 @@ function MyDropzone(props) {
                 <Row>
                     <Col md={{span: 2, offset: 6}}>
                         <br />
-                        <Button  className= "button" disabled={!isEnabled} onClick={() => {sendData(dataToUpload); setReady(false); setUploadData([])}}>Upload Data</Button>
-                        {/* <Button disabled={!isEnabled} onClick={() => {
-                            Promise.all([sendData(dataToUpload)])
-                                .then(() => {
-                                    setReady(false);
-                                    setUploadData([])
-                                })
-                            }}>Upload Data</Button> */}
-                        <p></p>
+                        <Button className="button" disabled={!isEnabled} onClick={() => {
+                            sendData(dataToUpload); 
+                            setReady(false); 
+                            setSubmitted(true);
+                            setUploadData([]);
+                            }}>Upload Data</Button>
+                            <p></p>
                         <Button  className= "button" disabled={!isEnabled} onClick={() => {clearData(dataToUpload); setReady(false); setUploadData([])}}>Clear Data</Button>
                     </Col>
                 </Row>
@@ -163,5 +162,3 @@ function MyDropzone(props) {
   }
 
   export default MyDropzone;
-
-

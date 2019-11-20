@@ -9,9 +9,39 @@ const config = require(__dirname + '/../config/config.json')[env];
 let db = {};
 
 
-// Output will read the information from the .env file if it exists and initialize new Sequelize intance
-if (config.use_env_variable) {
-    var sequelize = new Sequelize(process.env[config.use_env_variable]);
+// Output will read the information from the .env file if it exists and initialize new Sequelize instance
+// if (config.use_env_variable) {
+//     var sequelize = new Sequelize(process.env[config.use_env_variable]);
+// }
+if (process.env.JAWSDB_URL) {
+    var sequelize = new Sequelize(process.env.JAWSDB_URL, {
+        pool: {
+            max: 5,
+            min: 0,
+            acquire: 30000,
+            idle: 10000
+        },
+        retry  : {
+            match: [
+                /ETIMEDOUT/,
+                /EHOSTUNREACH/,
+                /ECONNRESET/,
+                /ECONNREFUSED/,
+                /ETIMEDOUT/,
+                /ESOCKETTIMEDOUT/,
+                /EHOSTUNREACH/,
+                /EPIPE/,
+                /EAI_AGAIN/,
+                /SequelizeConnectionError/,
+                /SequelizeConnectionRefusedError/,
+                /SequelizeHostNotFoundError/,
+                /SequelizeHostNotReachableError/,
+                /SequelizeInvalidConnectionError/,
+                /SequelizeConnectionTimedOutError/
+            ],
+            max  : 5
+        }
+})
 }
 // Or it will initialize a Sequelize instance with the database information in the config/config.json file.
 else {
