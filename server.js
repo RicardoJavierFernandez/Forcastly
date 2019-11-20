@@ -13,7 +13,8 @@ var syncOptions = { force: false }; // change to true if we want to override the
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
-    // syncOptions.force = true; -- When we deploy we can uncomment this part, however we keep losing thw 
+    // syncOptions.force = true; -- When we deploy we can uncomment this part, however we keep losing the data
+    // with this on
 }
  
 app.use(routes);
