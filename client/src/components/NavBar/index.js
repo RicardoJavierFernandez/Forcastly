@@ -13,7 +13,7 @@ class NavBar extends Component {
     render() {
         return (
             <Navbar bg="dark" variant="dark">
-            <Link to="/home" className="custom-link navbar-brand">Forcastly</Link>
+            <Link to="/home" className="custom-link navbar-brand">4castly</Link>
                 <Nav className="mr-auto">
                 <Link to="/home" className="custom-link nav-link">Home</Link>
                 <Link to="/forecast" className="custom-link nav-link">Forecast</Link>
