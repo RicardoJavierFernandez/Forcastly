@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import API from '../../../src/utils/API';
-
+import { Link } from 'react-router-dom';
 import { Form, Button, Container, Col, Jumbotron } from 'react-bootstrap';
 
 import './styles.css';
@@ -98,7 +98,7 @@ class RegistrationForm extends Component {
                 <Col md={{ span: 4, offset: 4 }}>
                     <Button className = "button"disabled={!isEnabled} onClick={this.register}>Register</Button>
                     <br />
-                    <a href="login" className = "already">Already Registered? Go to login</a>
+                    <Link to="/login" className="already">Already Registered? Go to login</Link>
                 </Col>
             </Container>   
             

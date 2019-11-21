@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import API from '../utils/API';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Form, Button, Container, Col, Jumbotron } from 'react-bootstrap/';
 
 
