@@ -38,7 +38,7 @@ class RegistrationForm extends Component {
             <Container>
                 <Jumbotron className= "jumbo2">
                     <Container className= "jumbo2">
-                        <h3>Welcome to Forcastly</h3>
+                        <h3>Welcome to 4castly</h3>
                         <p> Fill out the form for registration </p>
                     </Container>
                 </Jumbotron>

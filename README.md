@@ -1,5 +1,5 @@
-# Forcastly
-Forcastly is an inventory management and forecasting application written with:
+# 4castly
+4castly is an inventory management and forecasting application written with:
 * React.js
 * Node.js
 * Express.js

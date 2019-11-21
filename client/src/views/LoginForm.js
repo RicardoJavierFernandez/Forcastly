@@ -37,7 +37,7 @@ class LoginForm extends Component {
                 <Jumbotron className = "jumbo5">
                     <Container classname = "jumbo5">
                    
-                        <h2>Welcome to Forcastly  </h2>
+                        <h2>Welcome to 4castly  </h2>
                         <p>Please sign in below or create an account</p>
                     
                     </Container>
