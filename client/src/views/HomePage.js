@@ -110,23 +110,23 @@ class HomePage extends Component {
                     </thead>
                     <tbody className= "tbody">
                     <tr>
-                        <td>Product 1</td>
+                        <td>ScotchBlue 1.88 in. x 60 yds. Painter Tape</td>
                         <td>$8,000</td>
                     </tr>
                     <tr>
-                        <td>Product 2</td>
+                        <td>1.89 in. x 120 yd. 300 Heavy-Duty Duct Tape in Silver</td>
                         <td>$6,000</td>
                     </tr>
                     <tr>
-                        <td>Product 3</td>
+                        <td>Scotch Super 33+ 3/4 in. x 66 ft. Vinyl Electrical Tape, Black</td>
                         <td>$5,040</td>
                     </tr>
                     <tr>
-                        <td>Product 4</td>
+                        <td>6 in. x 20 yds. Non-Skid Black Grip Tape</td>
                         <td>$5,000</td>
                     </tr>
                     <tr>
-                        <td>Product 5</td>
+                        <td>1.89 in. x 54.7 yds. 510 Professional-Grade Gaffer Tape in Black</td>
                         <td>$3,240</td>
                     </tr>
                     </tbody>
@@ -146,23 +146,23 @@ class HomePage extends Component {
                     </thead>
                     <tbody className= "tbody">
                     <tr>
-                        <td>Product 1</td>
+                        <td>1.89 in. x 120 yd. 300 Heavy-Duty Duct Tape in Silver	</td>
                         <td>223</td>
                     </tr>
                     <tr>
-                        <td>Product 2</td>
+                        <td>ScotchBlue 1.88 in. x 60 yds. Painter Tape</td>
                         <td>200</td>
                     </tr>
                     <tr>
-                        <td>Product 3</td>
+                        <td>Scotch Super 33+ 3/4 in. x 66 ft. Vinyl Electrical Tape, Black</td>
                         <td>154</td>
                     </tr>
                     <tr>
-                        <td>Product 4</td>
+                        <td>6 in. x 20 yds. Non-Skid Black Grip Tape</td>
                         <td>143</td>
                     </tr>
                     <tr>
-                        <td>Product 5</td>
+                        <td>1.89 in. x 54.7 yds. 510 Professional-Grade Gaffer Tape in Black</td>
                         <td>127</td>
                     </tr>
                     </tbody>
